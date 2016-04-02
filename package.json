@@ -1,0 +1,28 @@
+{
+  "name": "engineeroverflow.com",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DTrejo/engineeroverflow.com.git"
+  },
+  "author": "",
+  "bugs": {
+    "url": "https://github.com/DTrejo/engineeroverflow.com/issues"
+  },
+  "homepage": "https://github.com/DTrejo/engineeroverflow.com",
+  "private": true,
+  "dependencies": {
+    "buildbranch": "1.0.0"
+  },
+  "scripts": {
+    "app": "PORT=9000; open http://localhost:$PORT & harp server public -p $PORT",
+    "compile": "harp compile ./public -o ../www",
+    "buildbranch": "buildbranch gh-pages www",
+    "deploy": "npm run compile && npm run buildbranch"
+  }
+}
