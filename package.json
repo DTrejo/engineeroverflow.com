@@ -4,7 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "app": "PORT=9000; open http://localhost:$PORT & harp server public -p $PORT",
+    "compile": "harp compile ./public -o ../www",
+    "buildbranch": "buildbranch gh-pages www",
+    "deploy": "npm run compile && npm run buildbranch"
   },
   "repository": {
     "type": "git",
@@ -17,12 +20,7 @@
   "homepage": "https://github.com/DTrejo/engineeroverflow.com",
   "private": true,
   "dependencies": {
-    "buildbranch": "1.0.0"
-  },
-  "scripts": {
-    "app": "PORT=9000; open http://localhost:$PORT & harp server public -p $PORT",
-    "compile": "harp compile ./public -o ../www",
-    "buildbranch": "buildbranch gh-pages www",
-    "deploy": "npm run compile && npm run buildbranch"
+    "buildbranch": "1.0.0",
+    "harp": "0.19.0"
   }
 }
